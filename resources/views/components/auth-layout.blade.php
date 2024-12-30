@@ -7,6 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Budget Planner</title>
     @vite(['resources/css/app.css'])
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body class="bg-rose h-screen flex flex-col justify-center items-center">
@@ -14,7 +19,7 @@
         <x-nav-link href="/">Register</x-nav-link>
         <x-nav-link href="/login">Login</x-nav-link>
     </div>
-    <div class="bg-white px-8 py-6 rounded-lg w-1/3 h-1/2">
+    <div class="bg-white px-8 py-6 rounded-lg shadow-lg w-1/4 h-1/2 flex justify-center items-center">
         {{ $slot }}
     </div>
 </body>

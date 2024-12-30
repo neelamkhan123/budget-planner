@@ -8,14 +8,19 @@ export default {
         './resources/**/*.blade.php',
         './resources/**/*.js',
         './resources/**/*.vue',
+        './resources/**/*.css',
     ],
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Roboto, serif'],
             },
             colors: {
-                rose: '#fda4af'
+                rose: '#fda4af',
+                hotPink: '#db2777',
+                hotPinkHover: '#ec4899',
+                lightPink: '#fce7f3',
+                lightGray: '#f1f5f9'
             }
         },
     },

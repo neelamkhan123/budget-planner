@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .dark-button {
+        @apply bg-hotPink text-white rounded-lg px-4 py-2 shadow-lg font-medium cursor-pointer hover:bg-hotPinkHover transition-colors duration-300;
+    }
+
+    .light-button {
+        @apply bg-lightPink text-hotPink rounded-lg px-4 py-2 shadow-lg font-medium cursor-pointer hover:text-hotPinkHover transition-colors duration-300;
+    }
+}

@@ -1,4 +1,4 @@
 @props(['name', 'id', 'type' => 'text'])
 
 <input name="{{ $name }}" id="{{ $id }}" type="{{ $type }}" {{ $attributes }}
-    class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md" />
+    class="border border-lightGray outline-none p-2 w-full rounded-md shadow-sm text-sm" />
