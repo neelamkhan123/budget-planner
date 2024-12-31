@@ -8,6 +8,6 @@
     }
 
     .light-button {
-        @apply bg-lightPink text-hotPink rounded-lg px-4 py-2 shadow-lg font-medium cursor-pointer hover:text-hotPinkHover transition-colors duration-300;
+        @apply text-hotPink px-4 py-2 font-medium cursor-pointer hover:text-hotPinkHover transition-colors duration-300;
     }
 }

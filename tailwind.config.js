@@ -1,5 +1,3 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
-
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
@@ -20,7 +18,8 @@ export default {
                 hotPink: '#db2777',
                 hotPinkHover: '#ec4899',
                 lightPink: '#fce7f3',
-                lightGray: '#f1f5f9'
+                lightGray: '#f1f5f9',
+                folder: '#fefce8'
             }
         },
     },

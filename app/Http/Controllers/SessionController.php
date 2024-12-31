@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
+use App\Models\User;
 
 class SessionController extends Controller
 {
@@ -19,38 +22,44 @@ class SessionController extends Controller
      */
     public function store(Request $request)
     {
-        dd('success');
-    }
+        // Validate Credentials
+        $credentials = $request->validate([
+            'email' => ['required'],
+            'password' => ['required'],
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        // Attempt to authenticate the user
+        if (!Auth::attempt($credentials)) {
+            // Check if the email exists in the database
+            $emailExists = User::where('email', $credentials['email'])->exists();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
+            // Customize error messages based on the cause of failure
+            if (!$emailExists) {
+                throw ValidationException::withMessages([
+                    'email' => 'The email address does not exist in our records.',
+                ]);
+            }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
+            // Password is incorrect
+            throw ValidationException::withMessages([
+                'password' => 'The password you entered is incorrect.',
+            ]);
+        }
+
+        // Regenerate session tokens
+        request()->session()->regenerate();
+
+        // Redirect to expenses
+        return redirect('/expenses');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy()
     {
-        //
+        Auth::logout();
+
+        return redirect('/login');
     }
 }
