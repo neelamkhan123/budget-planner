@@ -33,7 +33,7 @@ class RegistrationController extends Controller
 
         Auth::login($user);
 
-        return redirect('/expenses');
+        return redirect('/budget');
     }
 
     /**

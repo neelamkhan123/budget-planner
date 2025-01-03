@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BudgetAmountController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\SessionController;
@@ -18,7 +19,14 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::delete('/logout', [SessionController::class, 'destroy']);
 
+    Route::get('/budget', [BudgetAmountController::class, 'create']);
+    Route::post('/budget', [BudgetAmountController::class, 'store']);
+
+    Route::get('/dashboard', [BudgetAmountController::class, 'show']);
+
     Route::get('/expenses', [ExpensesController::class, 'index']);
+
     Route::get('/savings', [SavingsController::class, 'index']);
+
     Route::get('/leisure', [LeisureController::class, 'index']);
 });

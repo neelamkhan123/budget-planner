@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use App\Models\User;
+use App\Models\Budget;
 
 class SessionController extends Controller
 {
@@ -49,8 +50,16 @@ class SessionController extends Controller
         // Regenerate session tokens
         request()->session()->regenerate();
 
-        // Redirect to expenses
-        return redirect('/expenses');
+        // Get budget value
+        $budget = Budget::where('user_id', Auth::id())->first();
+
+        if (!$budget) {
+            // Redirect to expenses
+            return redirect('/budget');
+        }
+
+        // Skip adding budget, and go staright to dashboard
+        return redirect('/dashboard');
     }
 
     /**
