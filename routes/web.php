@@ -22,9 +22,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/budget', [BudgetAmountController::class, 'create']);
     Route::post('/budget', [BudgetAmountController::class, 'store']);
 
-    Route::get('/dashboard', [BudgetAmountController::class, 'show']);
-
-    Route::get('/expenses', [ExpensesController::class, 'index']);
+    Route::get('/expenses', [ExpensesController::class, 'create']);
+    Route::post('/expenses', [ExpensesController::class, 'store']);
+    // Route::get('/expenses', [ExpensesController::class, 'show']);
+    Route::delete('/expenses/{id}', [ExpensesController::class, 'destroy']);
 
     Route::get('/savings', [SavingsController::class, 'index']);
 

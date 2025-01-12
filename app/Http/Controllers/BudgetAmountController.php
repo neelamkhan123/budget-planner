@@ -73,41 +73,6 @@ class BudgetAmountController extends Controller
             ]
         );
 
-        return redirect('/dashboard');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show()
-    {
-        // Get latest budget row where the user_id is equal to the currently signed in user
-        $budget = Budget::where('user_id', Auth::id())->first();
-
-        return view('budget.show', ['budget' => $budget]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return redirect('/expenses');
     }
 }

@@ -1,3 +1,3 @@
-<x-dash-layout>
+<x-dashboard-layout>
     <h1>Leisure Page</h1>
-</x-dash-layout>
+</x-dashboard-layout>

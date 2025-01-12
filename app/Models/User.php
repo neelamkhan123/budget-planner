@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Budget;
+use App\Models\Expenses;
 
 class User extends Authenticatable
 {
@@ -44,5 +45,10 @@ class User extends Authenticatable
     public function budget()
     {
         return $this->hasOne(Budget::class);
+    }
+
+    public function expenses()
+    {
+        return $this->hasMany(Expenses::class);
     }
 }

@@ -58,8 +58,8 @@ class SessionController extends Controller
             return redirect('/budget');
         }
 
-        // Skip adding budget, and go staright to dashboard
-        return redirect('/dashboard');
+        // Skip adding budget, and go staright to dashboard with expenses open
+        return redirect('/expenses');
     }
 
     /**

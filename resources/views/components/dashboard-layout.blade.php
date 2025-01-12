@@ -26,8 +26,8 @@
                 <button class="light-button">Logout</button>
             </form>
         </div>
-        <div class="bg-folder w-full h-full rounded-lg">
-
+        <div class="bg-folder w-full h-full rounded-lg flex justify-center overflow-hidden">
+            {{ $slot }}
         </div>
     </div>
 </x-layout>
