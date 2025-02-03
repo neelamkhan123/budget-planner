@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .dark-button {
+        @apply bg-hotPink text-white rounded-lg px-4 py-2 shadow-lg font-medium cursor-pointer hover:bg-hotPinkHover transition-all duration-300 hover:shadow-none;
+    }
+
+    .light-button {
+        @apply text-hotPink px-4 py-2 font-medium cursor-pointer hover:text-hotPinkHover transition-all duration-300 hover:shadow-none;
+    }
+}
+
+@layer utilities {
+    .no-arrows::-webkit-inner-spin-button,
+    .no-arrows::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* For Firefox */
+    .no-arrows[type="number"] {
+        -moz-appearance: textfield;
+    }
+
+    .input {
+        @apply border border-lightGray outline-none p-2 w-full rounded-md shadow-sm text-sm;
+    }
+}
